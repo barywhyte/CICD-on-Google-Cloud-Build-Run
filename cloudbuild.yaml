@@ -1,0 +1,6 @@
+steps:
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '-t', 'gcr.io/fastdatacomm/cicd-on-google-cloud-build:$COMMIT_SHA', '.']
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['push', 'gcr.io/fastdatacomm/cicd-on-google-cloud-build:$COMMIT_SHA']
+  
