@@ -1,7 +1,12 @@
 steps:
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['build', '-t', 'gcr.io/roava-project/nodejs-trigger:$TAG_NAME', '.']
+  args: ['build', '-t', 'gcr.io/roava-project/python-app:$_TAG', '.']
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['push', 'gcr.io/roava-project/nodejs-trigger:$TAG_NAME']
+  args: ['push', 'gcr.io/roava-project/python-app:$_TAG']
+images:
+- 'gcr.io/roava-project/python-app:$_TAG'
+- 'gcr.io/roava-project/python-app:latest'
+substitutions:
+  _TAG: 1.0
 
   
