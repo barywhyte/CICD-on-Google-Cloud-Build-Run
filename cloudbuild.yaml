@@ -3,10 +3,11 @@ steps:
   args: ['build', '-t', 'gcr.io/roava-project/python-app:$_TAG', '.']
 - name: 'gcr.io/cloud-builders/docker'
   args: ['push', 'gcr.io/roava-project/python-app:$_TAG']
+substitutions:
+- _TAG: 1.0
 images:
 - 'gcr.io/roava-project/python-app:$_TAG'
 - 'gcr.io/roava-project/python-app:latest'
-substitutions:
-  _TAG: 1.0
+
 
   
