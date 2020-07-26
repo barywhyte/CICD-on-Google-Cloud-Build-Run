@@ -1,10 +1,10 @@
 steps:
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['build', '-t', 'gcr.io/fastdatacomm/cicd-on-google-cloud-build:$COMMIT_SHA', '.']
+  args: ['build', '-t', 'gcr.io/roava-project/nodejs-cicd:$COMMIT_SHA', '.']
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['push', 'gcr.io/fastdatacomm/cicd-on-google-cloud-build:$COMMIT_SHA']
+  args: ['push', 'gcr.io/roava-project/nodejs-cicd:$COMMIT_SHA']
 - name: 'gcr.io/cloud-builders/gcloud'
-  args: ['run', 'deploy', 'node-on-cloud-run', '--image', 'gcr.io/fastdatacomm/cicd-on-google-cloud-build:$COMMIT_SHA', '--region', 'us-central1', '--platform', 'managed', '--allow-unauthenticated']
+  args: ['run', 'deploy', 'node-on-cloud-run', '--image', 'gcr.io/roava-project/nodejs-cicd:$COMMIT_SHA', '--region', 'us-central1', '--platform', 'managed', '--allow-unauthenticated']
 images:
-- gcr.io/fastdatacomm/cicd-on-google-cloud-build
+- gcr.io/roava-project/nodejs-cicd
   
