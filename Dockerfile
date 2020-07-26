@@ -1,7 +1,11 @@
-FROM node:13-slim
+FROM python:3.7-slim
+
+RUN pip install flask
 
 WORKDIR /app
 
-ADD . /app
+COPY app.py /app/app.py
 
-CMD node server.js
+ENTRYPOINT ["python"]
+
+CMD ["/app/app.py"]
