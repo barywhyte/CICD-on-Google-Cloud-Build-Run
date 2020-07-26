@@ -1,8 +1,9 @@
-const http = require('http')
-const server = http.createServer((req, res) =>{
-    console.log('New Connection')
-    res.end('Hello Seun! This worked!')
-})
+from flask import Flask
+app = Flask('hello-cloudbuild')
 
-const PORT = process.env.PORT || 8080
-server.listen(PORT, () => console.log('Listening'))
+@app.route('/')
+def hello():
+  return "Seun, are you there?\n"
+
+if __name__ == '__main__':
+  app.run(host = '0.0.0.0', port = 8080)
