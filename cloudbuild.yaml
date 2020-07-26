@@ -1,7 +1,7 @@
 steps:
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['build', '-t', 'gcr.io/roava-project/nodejs-cicd:$COMMIT_SHA', '.']
+  args: ['build', '-t', 'gcr.io/roava-project/nodejs-cicd:$TAG_NAME', '.']
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['push', 'gcr.io/roava-project/nodejs-cicd:$COMMIT_SHA']
+  args: ['push', 'gcr.io/roava-project/nodejs-cicd:$TAG_NAME']
 
   
