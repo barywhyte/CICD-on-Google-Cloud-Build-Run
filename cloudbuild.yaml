@@ -1,7 +1,7 @@
 steps:
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['build', '-t', 'gcr.io/roava-project/nodejs-cicd:$TAG_NAME', '.']
+  args: ['build', '-t', 'gcr.io/roava-project/nodejs-trigger:$TAG_NAME', '.']
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['push', 'gcr.io/roava-project/nodejs-cicd:$TAG_NAME']
+  args: ['push', 'gcr.io/roava-project/nodejs-trigger:$TAG_NAME']
 
   
