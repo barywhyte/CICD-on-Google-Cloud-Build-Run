@@ -4,10 +4,10 @@ steps:
 - name: 'gcr.io/cloud-builders/docker'
   args: ['push', 'gcr.io/roava-project/python-app:$_TAG']
 substitutions:
-- _TAG: 1.0
+  _TAG: 1.0
 images:
 - 'gcr.io/roava-project/python-app:$_TAG'
-- 'gcr.io/roava-project/python-app:latest'
+#- 'gcr.io/roava-project/python-app:latest'
 
 
   
