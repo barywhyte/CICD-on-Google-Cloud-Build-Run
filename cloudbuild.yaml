@@ -13,7 +13,7 @@ steps:
   args:
   - 'build'
   - '-t'
-  - 'gcr.io/$PROJECT_ID/python-app:$SHORT_SHA'
+  - 'gcr.io/roava-project/python-app:$SHORT_SHA'
   - '.'
 
 # This step pushes the image to Container Registry
@@ -23,7 +23,7 @@ steps:
   id: Push
   args:
   - 'push'
-  - 'gcr.io/$PROJECT_ID/python-app:$SHORT_SHA'
+  - 'gcr.io/roava-project/python-app:$SHORT_SHA'
 
 
   
