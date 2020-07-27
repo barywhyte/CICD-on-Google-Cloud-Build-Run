@@ -24,7 +24,7 @@ steps:
   args:
   - 'push'
   - 'gcr.io/$PROJECT_ID/python-app:$SHORT_SHA'
-image: 
+images: 
    'gcr.io/$PROJECT_ID/python-app:$SHORT_SHA'
 
 
