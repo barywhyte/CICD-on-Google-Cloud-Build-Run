@@ -11,6 +11,9 @@ steps:
   args: ["fetch", "--unshallow"]
 - name: gcr.io/cloud-builders/git
   entrypoint: /bin/bash
+  args: ["-c", "init"]
+- name: gcr.io/cloud-builders/git
+  entrypoint: /bin/bash
   args: ["-c", "echo ${_MAJOR}.${_MINOR}.$(git rev-list --count master) > IMAGE_TAG"]
 - name: gcr.io/cloud-builders/docker
   entrypoint: /bin/bash
